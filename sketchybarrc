@@ -17,7 +17,7 @@ SEGMENT_SPACING=13
 # Bar Appearance
 sketchybar --bar color=$BAR_COLOR        \
                  border_color=$BAR_COLOR \
-                 position=top            \
+                 position=bottom         \
                  height=20               \
                  margin=0                \
                  y_offset=0              \
@@ -94,11 +94,7 @@ sketchybar --add       item         front_app left                     \
 
 ##### Adding Right Items #####
 
-sketchybar --add item clock right                        \
-           --set clock   update_freq=10                  \
-                         script="$PLUGIN_DIR/clock.sh"   \
-                                                         \
-           --add item battery right                      \
+sketchybar --add item battery right                      \
            --set battery script="$PLUGIN_DIR/battery.sh" \
                          update_freq=10                  \
            --subscribe battery system_woke
