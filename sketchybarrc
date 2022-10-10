@@ -83,13 +83,14 @@ sketchybar --add item       separator left                          \
                             icon.color=0xff606060
 
 # Curent procces name
-sketchybar --add       item         front_app left                     \
-           --set       front_app    script="$PLUGIN_DIR/front_app.sh"  \
-                                    label.font="$FONT:Bold:11.8"       \
-                                    label.y_offset=1                   \
+sketchybar --add       item         front_app left                    \
+           --set       front_app    script="$PLUGIN_DIR/front_app.sh" \
+                                    label.font="$FONT:Bold:11.8"      \
+                                    label.y_offset=1                  \
                                     label.padding_left=2              \
-                                    label.color=0xffd5d9dd             \
-                                    updates=when_shown                 \
+                                    label.padding_right=30            \
+                                    label.color=0xffd5d9dd            \
+                                    updates=when_shown                \
            --subscribe front_app    front_app_switched
 
 ##### Adding Right Items #####
