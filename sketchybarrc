@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+
+source "$HOME/.config/sketchybar/scripts/colors.sh"
+source "$HOME/.config/sketchybar/scripts/icons.sh"
+
+ITEM_DIR="$HOME/.config/sketchybar/items"
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+
+FONT="JetBrainsMono Nerd Font"
+
+ICON_SIZE=9.0
+LABEL_SIZE=10.0
+
+PADDINGS=3
+SEGMENT_SPACING=13
+
+# Bar Appearance
+sketchybar --bar color=$BAR_COLOR        \
+                 border_color=$BAR_COLOR \
+                 position=top            \
+                 height=20               \
+                 margin=0                \
+                 y_offset=0              \
+                 corner_radius=0         \
+                 border_width=0          \
+                 blur_radius=50          \
+                 padding_left=4          \
+                 padding_right=4         \
+                 notch_width=0           \
+                 notch_offset=0          \
+                 display=all             \
+                 hidden=off              \
+                 topmost=off             \
+                 sticky=on               \
+                 font_smoothing=on       \
+                 shadow=off
+
+# Changing Defaults
+sketchybar --default updates=when_shown                   \
+                     drawing=on                           \
+                     icon.font="$FONT:Bold:$ICON_SIZE"    \
+                     label.font="$FONT:Bold:$LABEL_SIZE"  \
+                     icon.color=$ICON_COLOR               \
+                     label.color=$LABEL_COLOR             \
+                     icon.padding_left=$PADDINGS          \
+                     icon.padding_right=$PADDINGS         \
+                     label.padding_left=$PADDINGS         \
+                     label.padding_right=$PADDINGS        \
+                     background.padding_left=$PADDINGS    \
+                     background.padding_right=$PADDINGS
+
+# Space number
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+
+for i in "${!SPACE_ICONS[@]}"
+do
+  sid=$(($i+1))
+  sketchybar --add space space.$sid left                         \
+             --set space.$sid associated_space=$sid              \
+                              icon=${SPACE_ICONS[i]}             \
+                              icon.padding_left=8                \
+                              icon.padding_right=8               \
+                              background.padding_left=5          \
+                              background.padding_right=5         \
+                              background.color=0x44ffffff        \
+                              background.corner_radius=5         \
+                              background.height=22               \
+                              background.drawing=off             \
+                              label.drawing=off                  \
+                              script="$PLUGIN_DIR/space.sh"      \
+                              updates=on                         \
+                              click_script="yabai -m space --focus $sid"
+done
+
+# First Seperator on the bar
+sketchybar --add item       separator left                          \
+           --set separator  icon=┃                                  \
+                            icon.font="$FONT:Regular:$ICON_SIZE"    \
+                            background.padding_left=-5              \
+                            background.padding_right=-7             \
+                            icon.y_offset=1                         \
+                            label.drawing=off                       \
+                            icon.color=0xff606060
+
+# Curent procces name
+sketchybar --add       item         front_app left                     \
+           --set       front_app    script="$PLUGIN_DIR/front_app.sh"  \
+                                    label.font="$FONT:Bold:11.8"       \
+                                    label.y_offset=1                   \
+                                    label.padding_left=2              \
+                                    label.color=0xffd5d9dd             \
+                                    updates=when_shown                 \
+           --subscribe front_app    front_app_switched
+
+##### Adding Right Items #####
+
+sketchybar --add item clock right                        \
+           --set clock   update_freq=10                  \
+                         script="$PLUGIN_DIR/clock.sh"   \
+                                                         \
+           --add item battery right                      \
+           --set battery script="$PLUGIN_DIR/battery.sh" \
+                         update_freq=10                  \
+           --subscribe battery system_woke
+
+##### Finalizing Setup #####
+sketchybar --update
+
+echo "sketchybar configuration loaded.."
