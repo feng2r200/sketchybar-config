@@ -23,7 +23,7 @@ done
 
 # First Seperator on the bar
 sketchybar --add item       separator left                          \
-           --set separator  icon=                                  \
+           --set separator  icon=┃                                  \
                             icon.font="$FONT:Regular:$ICON_SIZE"    \
                             background.padding_left=-3              \
                             background.padding_right=-1             \

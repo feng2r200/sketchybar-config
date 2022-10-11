@@ -64,8 +64,8 @@ sketchybar --default updates=when_shown                                 \
                      drawing=on
 
 # Left
-source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/skhdmod.sh"
+source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/front_app.sh"
 
 # Right

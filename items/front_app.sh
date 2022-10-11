@@ -1,18 +1,6 @@
 #!/usr/bin/env sh
 
-sketchybar --add       event        window_focus                        \
-           --add       item         system.yabai left                   \
-           --set       system.yabai script="$PLUGIN_DIR/yabai.sh"       \
-                                    icon.font="$FONT:Bold:$ICON_SIZE"   \
-                                    label.drawing=off                   \
-                                    icon.padding_left=8                 \
-                                    icon.width=30                       \
-                                    icon=$YABAI_GRID                    \
-                                    icon.color=$GREEN                   \
-                                    updates=on                          \
-           --subscribe system.yabai window_focus mouse.clicked          \
-                                                                        \
-           --add       item       front_app left                        \
+sketchybar --add       item       front_app left                        \
            --set       front_app  script="$PLUGIN_DIR/front_app.sh"     \
                                   icon.drawing=off                      \
                                   label.font="$FONT:Black:$LABEL_SIZE"  \
