@@ -17,15 +17,6 @@ sketchybar --add alias TextInputMenuAgent right                 \
                                     background.padding_left=4   \
                                     background.padding_right=4
 
-sketchybar --add alias  Surge right                 \
-           --set Surge  icon.padding_left=-8        \
-                        icon.padding_right=-8       \
-                        label.padding_left=-8       \
-                        label.padding_right=-8      \
-                        background.height=2         \
-                        background.padding_left=2   \
-                        background.padding_right=2
-
 sketchybar --add alias WeChat right                 \
            --set WeChat icon.padding_left=-8        \
                         icon.padding_right=-8       \
