@@ -24,9 +24,10 @@ sketchybar  --add event           skhd_mod                            \
                                     label.drawing=off                 \
                                     icon.padding_left=2               \
                                     icon.padding_right=2              \
+                                    icon.position=center              \
                                     icon.width=30                     \
                                     icon=$YABAI_GRID                  \
-                                    icon.color=$GREEN                 \
+                                    icon.color=$WHITE                 \
                                     updates=on                        \
             --subscribe system.yabai window_focus mouse.clicked       \
 
@@ -35,6 +36,6 @@ sketchybar --add item       separator2 left                           \
            --set separator2 icon=┃                                    \
                             icon.font="$FONT:Regular:$ICON_SIZE"      \
                             background.padding_left=-1                \
-                            background.padding_right=-5               \
+                            background.padding_right=0                \
                             label.drawing=off                         \
                             icon.color=$YELLOW

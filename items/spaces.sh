@@ -7,10 +7,11 @@ do
   sketchybar --add space space.$sid left                              \
              --set space.$sid associated_space=$sid                   \
                               icon=${SPACE_ICONS[i]}                  \
-                              icon.padding_left=8                     \
-                              icon.padding_right=8                    \
-                              icon.highlight_color=$YELLOW            \
+                              icon.padding_left=2                     \
+                              icon.padding_right=2                    \
+                              icon.highlight_color=$ORANGE            \
                               icon.color=$LABEL_COLOR                 \
+                              icon.position=center                    \
                               background.padding_left=5               \
                               background.padding_right=5              \
                               background.height=18                    \
@@ -25,7 +26,7 @@ done
 sketchybar --add item       separator left                          \
            --set separator  icon=┃                                  \
                             icon.font="$FONT:Regular:$ICON_SIZE"    \
-                            background.padding_left=-3              \
+                            background.padding_left=-1              \
                             background.padding_right=-1             \
                             label.drawing=off                       \
                             icon.color=$YELLOW
