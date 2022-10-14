@@ -32,7 +32,7 @@ sketchybar  --add event           skhd_mod                            \
 
 
 sketchybar --add item       separator2 left                           \
-           --set separator2 icon=                                    \
+           --set separator2 icon=┃                                    \
                             icon.font="$FONT:Regular:$ICON_SIZE"      \
                             background.padding_left=-1                \
                             background.padding_right=-5               \
