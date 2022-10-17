@@ -27,7 +27,8 @@ sketchybar  --add item            skhd.mod.right right                \
                                             icon=$YABAI_GRID                  \
                                             icon.color=$WHITE                 \
                                             updates=on                        \
-            --subscribe system.yabai.right window_focus mouse.clicked
+            --subscribe system.yabai.right  space_change display_change       \
+                                            window_focus mouse.clicked
 
 
 sketchybar --add item             separator.right right                     \
