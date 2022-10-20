@@ -1,10 +1,21 @@
 #!/usr/bin/env sh
 
-BGCOLOR=$VAR
+source "$HOME/.config/sketchybar/scripts/colors.sh"
 
-if [[ $BGCOLOR == '' ]]; then
-  BGCOLOR=0x44ffffff
-fi
+case $VAR in
+  MOTION)
+    BGCOLOR=$MOTION
+    ;;
+  MISC)
+    BGCOLOR=$MISC
+    ;;
+  FLOAT)
+    BGCOLOR=$FLOAT
+    ;;
+  *)
+    BGCOLOR=$NORMAL
+    ;;
+esac
 
 update() {
   sketchybar --set $NAME background.color=$BGCOLOR

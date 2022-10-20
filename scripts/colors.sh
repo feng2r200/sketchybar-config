@@ -5,8 +5,10 @@ BLACK=0xff181926
 WHITE=0xffcad3f5
 RED=0xffed8796
 GREEN=0xffa6da95
+DARK_GREEN=0xff3fe45d
 BLUE=0xff8aadf4
 YELLOW=0xffeed49f
+DARK_YELLOW=0xffffc40c
 ORANGE=0xfff5a97f
 MAGENTA=0xffc6a0f6
 GREY=0xff939ab7
@@ -29,3 +31,10 @@ PITCH_BLACK=0xff000000
 
 # Item specific special colors
 SPOTIFY_GREEN=$GREEN
+
+# shkd colors
+NORMAL=0x44ffffff
+MOTION=$DARK_GREEN
+MISC=$MAGENTA
+FLOAT=$DARK_YELLOW
+
