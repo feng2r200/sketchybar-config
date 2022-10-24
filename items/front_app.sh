@@ -15,5 +15,8 @@ sketchybar --add       item       front_app left                        \
                                   background.padding_left=6             \
                                   background.padding_right=8            \
                                   updates=when_shown                    \
-           --subscribe front_app  front_app_switched
+           --subscribe front_app  front_app_switched                    \
+                                  window_focus                          \
+                                  windows_on_spaces                     \
+                                  mouse.clicked
 
