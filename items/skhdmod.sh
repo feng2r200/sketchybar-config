@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+yabai=(
+    icon.width=0
+    label.width=0
+    script="$PLUGIN_DIR/yabai.sh"
+)
+
 sketchybar  --add event           skhd_mod                            \
             --add item            skhd.mod left                       \
             --set skhd.mod        script="$PLUGIN_DIR/skhdmod.sh"     \
@@ -35,11 +41,3 @@ sketchybar  --add event           skhd_mod                            \
                                       windows_on_spaces               \
                                       mouse.clicked
 
-
-sketchybar --add item       separator2 left                           \
-           --set separator2 icon=┃                                    \
-                            icon.font="$FONT:Regular:$ICON_SIZE"      \
-                            background.padding_left=-1                \
-                            background.padding_right=0                \
-                            label.drawing=off                         \
-                            icon.color=$YELLOW

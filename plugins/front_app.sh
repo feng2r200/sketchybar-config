@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
 
 update() {
-  sketchybar --set $NAME label="$INFO"
+  sketchybar -m --set $NAME label="$INFO"
 }
 
-TITLE=$(yabai -m query --windows --window | jq -r '.title')
-sketchybar --set $NAME label="$TITLE"
+WINDOW_APP=$(/opt/homebrew/bin/yabai -m query --windows --window | jq -r '.app')
+WINDOW_TITLE=$(/opt/homebrew/bin/yabai -m query --windows --window | jq -r '.title')
+
+sketchybar -m --set $NAME label="$WINDOW_APP:$WINDOW_TITLE"
