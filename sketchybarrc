@@ -19,8 +19,6 @@ CORNER_RADIUS=5
 POPUP_BORDER_WIDTH=2
 POPUP_CORNER_RADIUS=11
 
-SPACE_CLICK_SCRIPT="yabai -m space --focus \$SID 2>/dev/null" # The script that is run for clicking on space components
-
 SHADOW=on
 
 # Bar Appearance
@@ -69,7 +67,6 @@ defaults=(
 sketchybar --bar "${bar[@]}" --default "${defaults[@]}"
 
 # Left
-source "$ITEM_DIR/skhdmod.sh"
 source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/front_app.sh"
 
@@ -77,6 +74,7 @@ source "$ITEM_DIR/front_app.sh"
 source "$ITEM_DIR/power.sh"
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/macbar.sh"
+source "$ITEM_DIR/skhdmod.sh"
 
 ##### Finalizing Setup #####
 sketchybar --update

@@ -4,12 +4,15 @@ source "$HOME/.config/sketchybar/scripts/colors.sh"
 
 case $VAR in
   MOTION)
+    LABEL="[K]"
     BGCOLOR=$MOTION
     ;;
   MISC)
+    LABEL="[L]"
     BGCOLOR=$MISC
     ;;
   FLOAT)
+    LABEL="[;]"
     BGCOLOR=$FLOAT
     ;;
   *)
@@ -18,7 +21,7 @@ case $VAR in
 esac
 
 update() {
-  sketchybar --set $NAME background.color=$BGCOLOR
+  sketchybar --set $NAME icon="$LABEL" icon.color=$BGCOLOR
 }
 
-sketchybar --set $NAME background.color=$BGCOLOR
+sketchybar --set $NAME icon="$LABEL" icon.color=$BGCOLOR
