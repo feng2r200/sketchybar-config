@@ -15,6 +15,7 @@ sketchybar --add alias TextInputMenuAgent right                 \
                                     label.padding_right=2       \
                                     background.height=2         \
                                     background.padding_left=4   \
+                                    update_freq=1               \
                                     background.padding_right=4
 
 sketchybar --add alias DingTalk right                 \
