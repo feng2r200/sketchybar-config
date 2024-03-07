@@ -3,19 +3,20 @@
 source "$HOME/.config/sketchybar/scripts/colors.sh"
 
 case $VAR in
-  MOTION)
+  SKHD)
     LABEL="[K]"
-    BGCOLOR=$MOTION
+    BGCOLOR=$DARK_GREEN
     ;;
-  MISC)
-    LABEL="[L]"
-    BGCOLOR=$MISC
+  MOD1)
+    LABEL="[K1]"
+    BGCOLOR=$MAGENTA
     ;;
-  FLOAT)
-    LABEL="[;]"
-    BGCOLOR=$FLOAT
+  MOD2)
+    LABEL="[K2]"
+    BGCOLOR=$DARK_YELLOW
     ;;
   *)
+    LABEL=""
     BGCOLOR=$NORMAL
     ;;
 esac
